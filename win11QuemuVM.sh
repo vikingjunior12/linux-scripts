@@ -1,26 +1,3 @@
-VMNAME=win11-kvm
-ISO_WIN=~/ISO/Win11_25H2_German_x64.iso
-ISO_VIRTIO=/home/jonas/ISO/virtio-win-0.1.285.iso
-DISK=~/vms/$VMNAME.qcow2
-
-qemu-img create -f qcow2 "$DISK" 100G
-
-sudo virt-install \
-  --name "$VMNAME" \
-  --memory 8192 --vcpus 4 \
-  --cpu host-passthrough \
-  --machine q35 \
-  --os-variant win11 \
-  --graphics spice \
-  --video qxl \
-  --controller type=scsi,model=virtio-scsi \
-  --disk path="$DISK",bus=scsi,format=qcow2,cache=none,discard=unmap,detect-zeroes=unmap \
-  --cdrom "$ISO_WIN" \
-  --disk path="$ISO_VIRTIO",device=cdrom \
-  --network network=default,model=virtio \
-  --rng /dev/urandom \
-  --tpm backend=emulator,model=tpm2 \
-  --boot uefi
 #!/usr/bin/env bash
 
 set -euo pipefail

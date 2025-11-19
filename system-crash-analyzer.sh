@@ -2,7 +2,7 @@
 # System Crash Analyzer
 # Sammelt Informationen über Systemabstürze und Hardware-Probleme
 
-OUTPUT_FILE="/home/jonas/system-analysis-$(date +%Y%m%d-%H%M%S).md"
+OUTPUT_FILE="$HOME/system-analysis-$(date +%Y%m%d-%H%M%S).md"
 
 echo "=== System Crash Analysis ===" | tee "$OUTPUT_FILE"
 echo "Analysis Date: $(date)" | tee -a "$OUTPUT_FILE"
