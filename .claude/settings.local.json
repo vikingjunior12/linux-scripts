@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(chmod:*)",
+      "Read(//home/jonas/.config/tmux/plugins/tpm/**)",
+      "Bash(tmux source-file:*)",
+      "Bash(alacritty --version:*)",
+      "WebFetch(domain:starship.rs)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
